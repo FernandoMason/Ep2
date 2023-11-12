@@ -42,3 +42,22 @@ def indica_posicao(sorteada, especulada):
             resultado.append(2)  # Letra não existe na palavra sorteada
 
     return resultado
+
+def indica_posicao(sorteada, especulada):
+    if len(sorteada) != len(especulada):
+        return []  
+
+    resultado = []
+
+    for i in range(len(sorteada)):
+        if especulada[i] == sorteada[i]:
+            resultado.append(0)  # Letra na posição correta
+        elif especulada[i] in sorteada:
+            resultado.append(1)  # Letra existe na palavra sorteada, mas em posição errada
+        else:
+            resultado.append(2)  # Letra não existe na palavra sorteada
+
+    return resultado
+
+def sortear_palavra(palavras):
+    return random.choice(palavras)
